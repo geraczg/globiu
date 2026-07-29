@@ -1382,7 +1382,7 @@ h3 {
     padding-top: var(--header-height);
     place-items: center;
     background-color: var(--color-bg);
-    background-image: url("assets/hero-globiu-mobile.png");
+    background-image: url("assets/hero-globiu-mobile.png?v=1");
     background-repeat: no-repeat;
     background-position: center var(--header-height);
     background-size: 100% auto;

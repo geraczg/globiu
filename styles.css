@@ -1378,11 +1378,12 @@ h3 {
   :root { --header-height: 4.75rem; }
   .section { padding-block: 5rem; }
   .hero {
-    min-height: calc(215.93vw + var(--header-height));
+    height: 100svh;
+    min-height: 100svh;
     padding-top: var(--header-height);
     place-items: center;
     background-color: var(--color-bg);
-    background-image: url("assets/hero-globiu-mobile.png?v=1");
+    background-image: url("assets/hero-globiu-mobile.png?v=2");
     background-repeat: no-repeat;
     background-position: center var(--header-height);
     background-size: 100% auto;

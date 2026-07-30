@@ -1375,10 +1375,13 @@ h3 {
 }
 
 @media (max-width: 40rem) {
-  :root { --header-height: 4.75rem; }
+  :root {
+    --header-height: 4.75rem;
+    --mobile-hero-top-crop: 12.65vw;
+  }
   .section { padding-block: 5rem; }
   .hero {
-    height: calc(var(--header-height) + 215.93vw);
+    height: calc(var(--header-height) + 215.93vw - var(--mobile-hero-top-crop));
     min-height: 100svh;
     padding-top: var(--header-height);
     place-items: center;

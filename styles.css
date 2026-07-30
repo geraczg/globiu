@@ -1407,11 +1407,14 @@ h3 {
     background: linear-gradient(180deg, oklch(0.07 0.014 220 / 0.58), oklch(0.07 0.014 220 / 0.66));
   }
   .inspiration-carousel { padding-block: 3.25rem; }
+  .inspiration-carousel > .section-shell { width: 100%; }
+  .inspiration-carousel__viewport { padding-inline: 2rem; }
   .inspiration-carousel__track {
     margin-inline: 0;
     padding-inline: 0;
     scroll-padding-inline: 0;
   }
+  .inspiration-carousel__footer { padding-inline: 2rem; }
   .inspiration-card {
     flex-basis: 100%;
     height: auto;

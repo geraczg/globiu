@@ -1378,7 +1378,7 @@ h3 {
   :root { --header-height: 4.75rem; }
   .section { padding-block: 5rem; }
   .hero {
-    height: 100svh;
+    height: calc(var(--header-height) + 215.93vw);
     min-height: 100svh;
     padding-top: var(--header-height);
     place-items: center;
@@ -1386,7 +1386,7 @@ h3 {
     background-image: url("assets/hero-globiu-mobile.png?v=2");
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: 100% calc(100% - var(--header-height));
+    background-size: 100% auto;
   }
   .hero__content,
   .hero__decor { display: none; }

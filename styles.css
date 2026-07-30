@@ -1385,8 +1385,8 @@ h3 {
     background-color: var(--color-bg);
     background-image: url("assets/hero-globiu-mobile.png?v=2");
     background-repeat: no-repeat;
-    background-position: center calc(var(--header-height) - clamp(3.25rem, 15vw, 4.25rem));
-    background-size: 100% auto;
+    background-position: center bottom;
+    background-size: auto calc(100% - var(--header-height));
   }
   .hero__content,
   .hero__decor { display: none; }

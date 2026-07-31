@@ -595,7 +595,7 @@ h3 {
 .inspiration-carousel__footer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1rem;
   min-height: 3rem;
 }

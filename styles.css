@@ -1169,7 +1169,15 @@ h3 {
 
 .site-footer { padding-block: var(--space-3xl); color: oklch(0.82 0.04 220); background: var(--color-nav); }
 .footer__layout { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: var(--space-xl); }
-.brand--footer { width: 12rem; align-items: flex-start; }
+.brand--footer {
+  box-sizing: border-box;
+  width: min(15rem, 100%);
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2.75rem 1.35rem 1.35rem;
+  border: 2px solid var(--color-primary);
+}
 .brand--footer .brand__name { font-size: 2.6rem; }
 .footer__layout > p:last-child { color: oklch(0.62 0.025 220); text-align: right; font-size: 0.82rem; }
 

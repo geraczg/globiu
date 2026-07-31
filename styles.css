@@ -1314,9 +1314,15 @@ h3 {
     aspect-ratio: auto;
   }
   .nav-link::after { left: 0; right: auto; bottom: 0.65rem; width: 3rem; }
-  .reveal-item { --reveal-distance: 3.5rem; transition-duration: 580ms; }
-  .reveal-item.reveal-jump-soft { --reveal-distance: 2.75rem; }
-  .reveal-item.reveal-jump-high { --reveal-distance: 4.25rem; }
+  .reveal-item,
+  .reveal-item.is-revealed {
+    opacity: 1;
+    translate: none;
+    scale: 1;
+    filter: none;
+    transition: none;
+    transition-delay: 0s;
+  }
   .hero {
     padding-top: var(--header-height);
     min-height: 48rem;

@@ -83,8 +83,9 @@ const activeSectionObserver = new IntersectionObserver((entries) => {
 sections.forEach((section) => activeSectionObserver.observe(section));
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const compactViewport = window.matchMedia('(max-width: 54rem)').matches;
 
-if (!reducedMotion && 'IntersectionObserver' in window) {
+if (!reducedMotion && !compactViewport && 'IntersectionObserver' in window) {
   const revealSets = [
     { selector: '.about__intro', motion: 'reveal-jump-soft' },
     { selector: '.about__copy', motion: 'reveal-jump-soft' },

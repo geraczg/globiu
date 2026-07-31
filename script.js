@@ -85,6 +85,42 @@ sections.forEach((section) => activeSectionObserver.observe(section));
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const compactViewport = window.matchMedia('(max-width: 54rem)').matches;
 
+function cleanSectionUrl() {
+  const cleanUrl = window.location.protocol === 'file:' ? window.location.pathname : '/';
+
+  try {
+    window.history.replaceState(window.history.state, '', cleanUrl);
+  } catch {
+    // Keep navigation working if the page is opened in a restricted preview.
+  }
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({
+      behavior: reducedMotion ? 'auto' : 'smooth',
+      block: 'start'
+    });
+    cleanSectionUrl();
+  });
+});
+
+const initialSectionId = decodeURIComponent(window.location.hash.slice(1));
+const initialSection = initialSectionId ? document.getElementById(initialSectionId) : null;
+
+if (initialSection || /\/index\.html$/i.test(window.location.pathname)) {
+  window.requestAnimationFrame(() => {
+    if (initialSection) initialSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+    cleanSectionUrl();
+  });
+}
+
 if (!reducedMotion && !compactViewport && 'IntersectionObserver' in window) {
   const revealSets = [
     { selector: '.about__intro', motion: 'reveal-jump-soft' },
